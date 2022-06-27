@@ -7,7 +7,8 @@ public class SecondLargestElementInAnArray {
 
 
     public static void main(String[] args) {
-        int[] arr1 = new int[]{3, 4, 9, 8, 7, 9, 9};
+        //int[] arr1 = new int[]{3, 4, 9, 8, 7, 9, 9};
+        int[] arr1 = new int[]{2,1,2};
         System.out.println("Second Largest: " + getSecondLargest(arr1));
     }
 

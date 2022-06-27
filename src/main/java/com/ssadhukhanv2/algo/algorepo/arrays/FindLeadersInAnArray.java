@@ -9,8 +9,21 @@ public class FindLeadersInAnArray {
         int[] arr = new int[]{7, 10, 4, 10, 6, 5, 2};
         printLeadersNaive(arr);
         System.out.println();
-        printLeaders(arr);
+        printLeadersPractice(arr);
     }
+
+    public static void printLeadersPractice(int[] arr) {
+        int n = arr.length;
+        int leader = arr[n - 1];
+        System.out.print(leader + " ");
+        for (int i = n - 2; i > 0; i--) {
+            if (arr[i] > leader) {
+                leader = arr[i];
+                System.out.print(leader + " ");
+            }
+        }
+    }
+
 
     public static void printLeaders(int[] arr) {
         //Complexity O(n)

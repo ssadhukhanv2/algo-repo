@@ -8,11 +8,29 @@ public class MoveZerosToEnd {
 
     public static void main(String[] args) {
         int[] arr = new int[]{1, 1, 0, 3, 0, 3, 4, 0, 0, 5, 0, 5};
-        moveZerosToEndNaive(arr);
+        practiceMoveZerosToTheEnd(arr);
 //        moveZerosToEnd(arr);
         for (int n : arr) {
             System.out.println(n + " ");
         }
+    }
+
+
+    public static int practiceMoveZerosToTheEnd(int[] arr) {
+        int nonZeroSize=0;
+        for (int i=0;i<arr.length;i++){
+            if(arr[i]!=0){
+                practiceSwap(arr,i,nonZeroSize);
+                nonZeroSize++;
+            }
+        }
+        return nonZeroSize;
+    }
+
+    public static void practiceSwap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
 

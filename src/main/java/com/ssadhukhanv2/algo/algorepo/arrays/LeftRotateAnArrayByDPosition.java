@@ -7,13 +7,29 @@ public class LeftRotateAnArrayByDPosition {
     public static void main(String[] args) {
         int[] arr = new int[]{1, 2, 3, 4, 5};
         int d = 2;
-//        leftRotateNative(arr,d);
-        leftRotate(arr, d);
+        leftRotateNaive(arr, d);
+//        leftRotate(arr, d);
         for (int n : arr) {
             System.out.print(n + " ");
         }
 
     }
+
+
+    public static void leftRotateNaive(int[] arr, int d) {
+        int[] temp = new int[d];
+        int n = arr.length;
+        for (int i = 0; i < d; i++) {
+            temp[i] = arr[i];
+        }
+        for (int i = d; i < n; i++) {
+            arr[i - d] = arr[i];
+        }
+        for (int i = 0; i < d; i++) {
+            arr[n - d + i] = temp[i];
+        }
+    }
+
 
     public static void leftRotate(int[] arr, int d) {
         //Complexity O(n)
@@ -42,26 +58,5 @@ public class LeftRotateAnArrayByDPosition {
     }
 
 
-    public static void leftRotateNative(int[] arr, int d) {
 
-        //Complexity O(n+d)
-        //Auxilary Space O(d)
-
-        int n = arr.length;
-        int[] tempArr = new int[d];
-
-        //copy the first d elements into temp array
-        for (int i = 0; i < d; i++) {
-            tempArr[i] = arr[i];
-        }
-        //shift the elements non-copied elements to the first of the array
-        for (int i = d; i < n; i++) {
-            arr[i - d] = arr[i];
-        }
-
-        //insert the elements from the temp array to the actual array
-        for (int i = 0; i < d; i++) {
-            arr[i + d - 1] = tempArr[i];
-        }
-    }
 }

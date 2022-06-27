@@ -9,6 +9,30 @@ public class PrintFrequencyInSortedArray {
         printFrequency(arr);
     }
 
+
+
+    public static void printFrequencySortedArray(int[] arr){
+        int i=0;
+        int n=arr.length;
+        while (i<n){
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static void printFrequency(int[] arr) {
         // Complexity O(n)
         int frequency = 1;
